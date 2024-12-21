@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const session = require('express-session'); // Import express-session
 const bodyParser = require('body-parser');
-
+const path = require('path')
 
 // Load environment variables
 dotenv.config();
@@ -19,7 +19,17 @@ app.use(bodyParser.json()); // Body parser middleware
 
 
 
-app.use(cors("http://localhost:3000"));
+app.use(cors({
+  "origin":["https://lovely-cajeta-d6847e.netlify.app"],
+  "methods":["POST"],
+  "credentials":true
+}));
+
+
+app.use(express.static(path.join(__dirname, '/quiz-app/frontend/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/quiz-app/frontend/build', 'index.html'));
+});
 
 // Session configuration
 app.use(session({
