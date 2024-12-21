@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const session = require('express-session'); // Import express-session
 const bodyParser = require('body-parser');
-const path = require('path');
+
 
 // Load environment variables
 dotenv.config();
@@ -17,19 +17,9 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json()); // Body parser middleware
 
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
-// Handle React routing, return all requests to React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
-});
 
-app.use(cors({
-  origin:["https://quiz-client-ruby.vercel.app"],
-  methods:["GET","POST","PUT","DELETE"],
-  credentials:true
-}));
+app.use(cors("http://localhost:3000"));
 
 // Session configuration
 app.use(session({
