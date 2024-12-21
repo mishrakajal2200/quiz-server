@@ -18,7 +18,7 @@ app.use(bodyParser.json()); // Body parser middleware
 
 
 app.use(cors({
-  origin:["https://vercel.com/kajal-mishras-projects/quiz-client"],
+  origin:["https://quiz-client-theta.vercel.app"],
   methods:["GET","POST","PUT","DELETE"],
   credentials:true
 }));
