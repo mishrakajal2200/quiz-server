@@ -18,7 +18,7 @@ pids
 # Environment variables
 .env
 .env.*
-!*.example.env # Allow example environment files for reference
+
 
 # Coverage reports
 /coverage
