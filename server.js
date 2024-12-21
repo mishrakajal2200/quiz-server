@@ -20,7 +20,7 @@ app.use(bodyParser.json()); // Body parser middleware
 
 
 app.use(cors({
-  "origin":["https://lovely-cajeta-d6847e.netlify.app"],
+  "origin":["https://jolly-blini-bb1970.netlify.app"],
   "methods":["POST"],
   "credentials":true
 }));
