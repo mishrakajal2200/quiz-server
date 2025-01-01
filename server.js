@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json()); // Body parser middleware
 
-app.use(cors("http://localhost:3000"));
+app.use(cors("https://magenta-crumble-52c752.netlify.app"));
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.get('*', (req, res) => {
