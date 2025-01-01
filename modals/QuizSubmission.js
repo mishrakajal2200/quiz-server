@@ -1,9 +1,7 @@
 
-
-
 const mongoose = require('mongoose');
-
 const QuizSubmissionSchema = new mongoose.Schema({
+  
   username: { type: String, required: true },
   totalQuestions: { type: Number, required: true },
   attemptedQuestions: { type: Number, required: true },
@@ -19,6 +17,7 @@ const QuizSubmissionSchema = new mongoose.Schema({
       correctAnswer: String,
     },
   ],
+  
   createdAt: { type: Date, default: Date.now },
 });
 

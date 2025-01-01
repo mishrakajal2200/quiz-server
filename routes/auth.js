@@ -41,10 +41,6 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-// Register route
-
-
-
 // Login route
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
@@ -73,8 +69,6 @@ if (!user) {
     res.status(500).json({ message: 'Server error' });
   }
 });
-
-
 
 // Sample logout route for session management
 router.post('/logout', (req, res) => {

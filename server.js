@@ -14,11 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json()); // Body parser middleware
 
-app.use(cors({
-  "origin":["https://clever-arithmetic-77cc2f.netlify.app"],
-  "methods":["GET","POST","PUT","DELETE"],
-  "credentials":true
-}));
+app.use(cors("http://localhost:3000"));
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.get('*', (req, res) => {
@@ -47,6 +43,7 @@ app.use('/api', authRoutes);           // For authentication routes
 app.use('/api/quiz',quizRoutes)
 app.use('/api',feedbackRoutes)
 app.use('/api',reportCheating)
+
 
 // app.use('/api/questions', questionRoutes);  // For question routes
 
