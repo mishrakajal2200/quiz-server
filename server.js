@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json()); // Body parser middleware
 
-app.use(cors("https://chipper-pastelito-fd7169.netlify.app"));
+app.use(cors("https://vocal-cocada-3a3dab.netlify.app"));
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.get('*', (req, res) => {
