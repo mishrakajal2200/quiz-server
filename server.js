@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json()); // Body parser middleware
 
-app.use(cors("https://peaceful-zuccutto-535d88.netlify.app"));
+app.use(cors("https://stunning-entremet-21f36c.netlify.app"));
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.get('*', (req, res) => {
